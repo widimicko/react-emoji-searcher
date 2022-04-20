@@ -1,16 +1,12 @@
 import "./style.css";
 
+import EmojiBox from "../EmojiBox";
+
 const Emojis = ({ emojis }) => {
   return (
     <div className="emojisGrid">
       {emojis.map((emoji, index) => (
-        <div key={index}>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: `&#${emoji.symbol.codePointAt(0)}`,
-            }}
-          />
-        </div>
+        <EmojiBox key={index} title={emoji.title} symbol={emoji.symbol} />
       ))}
     </div>
   );
